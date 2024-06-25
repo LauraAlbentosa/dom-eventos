@@ -116,15 +116,14 @@ const nextButttonElement = document.getElementById('next');
 let index = 0;
 
 const nextWord = () => {
-  if (index < posibleTitle.length -1) {
+  if (index < posibleTitle.length - 1) {
     index++;
     previousButtonElement.disabled = false;
-  } else if (index === posibleTitle.length -1) {
+  } else if (index === posibleTitle.length - 1) {
     nextButttonElement.disabled = true;
   }
   console.log(index);
   subtitleElement.textContent = posibleTitle[index];
-  
 };
 
 const previousWord = () => {
@@ -143,43 +142,35 @@ previousButtonElement.addEventListener('click', previousWord);
 
 // - Crea un input range con un label, al mover el input range deberá escribir en el label el valor del input range.
 
-const inputElement = document.getElementById('input')
-const labelElement = document.getElementById('label')
+const inputElement = document.getElementById('input');
+const labelElement = document.getElementById('label');
 
-const printValue = (event) =>{
-  labelElement.textContent = event.target.value
-}
+const printValue = event => {
+  labelElement.textContent = event.target.value;
+};
 
 //inputElement.addEventListener('change', printValue)
 
 // - Crea una lista de 4 checkbox con el texto que quieras y un botón, al pulsar el botón deberá decirte cuantos checkbox están marcados y cual es su texto.
 
+const listElement = document.getElementById('list');
 
-const listElement = document.getElementById('list')
+const inputs = document.querySelectorAll('input');
 
-const inputs = document.querySelectorAll('input')
+const inputTest = document.getElementById('check1');
 
-const inputTest = document.getElementById('check1')
+const button2Element = document.getElementById('button2');
 
-const button2Element = document.getElementById('button2')
-
-
-
-
-
-const helloTest = () =>{
-  let count  = 0
-  for (const input of inputs){
-    if (input.checked){
-      count++
-      console.log(`Esta casilla está marcada y dice ${input.parentElement.textContent}`)
+const checkBoxCount = () => {
+  let count = 0;
+  for (const input of inputs) {
+    if (input.checked) {
+      count++;
+      console.log(`Esta casilla está marcada y dice ${input.parentElement.textContent}`);
     }
   }
 
-  console.log('has marcado '+ count + ' casillas')
-}
+  console.log('has marcado ' + count + ' casillas');
+};
 
-
-button2Element.addEventListener('click', helloTest)
-
-
+button2Element.addEventListener('click', checkBoxCount);
