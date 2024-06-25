@@ -31,8 +31,9 @@ buttonElement.addEventListener('click', printClick2);
 
 const buttonElement = document.getElementById('button');
 
-const printClick = () => {
+const printClick = event => {
   console.log(buttonElement.textContent);
+  //console.log(event.tagert.textContent)
 };
 
 buttonElement.addEventListener('click', printClick);
@@ -58,6 +59,11 @@ titleElement.addEventListener('mouseout', normalTitle);
 const printInfo = () => {
   console.log(window.innerWidth, window.innerHeight);
 };
+
+/*const printInfo = event =>{
+  console.log(èl ancho de la ventana es de ${vent.target.innerwidht} y el alto es  ${event.target.innerheight`})
+  }
+*/
 
 window.addEventListener('resize', printInfo);
 
@@ -149,16 +155,13 @@ const printValue = event => {
   labelElement.textContent = event.target.value;
 };
 
-//inputElement.addEventListener('change', printValue)
+inputElement.addEventListener('change', printValue);
 
 // - Crea una lista de 4 checkbox con el texto que quieras y un botón, al pulsar el botón deberá decirte cuantos checkbox están marcados y cual es su texto.
 
-const listElement = document.getElementById('list');
-
+//const listElement = document.getElementById('list');
 const inputs = document.querySelectorAll('input');
-
-const inputTest = document.getElementById('check1');
-
+//const inputTest = document.getElementById('check1');
 const button2Element = document.getElementById('button2');
 
 const checkBoxCount = () => {
